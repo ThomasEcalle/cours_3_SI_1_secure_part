@@ -1,0 +1,22 @@
+#!/usr/bin/env ruby
+
+logRegex = /console.log(.)/
+
+fileNames = `git diff --cached --name-only`.split("\n")
+
+erroFound = false
+
+fileNames.each do |fileName|
+	file = File.open(fileName)
+	content = file.read
+
+	if logRegex.match(content)
+		erroFound = true
+		puts "We found a console.log() in file #{fileName}"
+	end
+end
+
+if erroFound
+	puts "[ERROR] You try to commit console.log(), please remove them !"
+	exit 1
+end
