@@ -17,6 +17,6 @@ fileNames.each do |fileName|
 end
 
 if erroFound
-	puts "[ERROR] You try to commit console.log(), please remove them !"
+	puts "[ERROR] You try to commit console.log(), please remove them !!"
 	exit 1
 end
