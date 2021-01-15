@@ -1,2 +1,4 @@
 salut !!!!!
 C'est moi !
+
+console.log("Salut");
